@@ -6,7 +6,7 @@ class Account():
     def __init__(self):
         pass
     
-    def deposit(self):
+    def deposit(self, security):
         pass
     
     def withdraw(self):
@@ -19,11 +19,15 @@ class TradingAccount(Account):
 
     def __init__(self):
         pass
+    
+    def deposit(self, security):
+        
 
-    def buy(self):
+    def buy(self, security: Security):
         # withdraws amount and deposits the security
         try:
             self.withdraw()
             self.deposit()
-        except NoBalanceException as e:
+        except AccountException as e:
             raise BuyError("Insufficient Balance")
+        
