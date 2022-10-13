@@ -1,3 +1,6 @@
+from exceptions import AccountException
+
+
 class Account():
     """
     Class that abstracts an account
@@ -28,6 +31,6 @@ class TradingAccount(Account):
         try:
             self.withdraw()
             self.deposit()
-        except AccountException as e:
-            raise BuyError("Insufficient Balance")
+        except BuyError as e:
+            raise AccountException("Insufficient Balance")
         
