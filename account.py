@@ -1,4 +1,4 @@
-from exceptions import AccountException
+from exceptions import *
 
 
 class Account():
@@ -24,7 +24,7 @@ class TradingAccount(Account):
         pass
     
     def deposit(self, security):
-        
+        pass
 
     def buy(self, security: Security):
         # withdraws amount and deposits the security
