@@ -1,21 +1,26 @@
+from email import header
+import imp
 import json
 from enum import Enum
 from hashlib import md5
+from select import select
 import requests
 
 class Symbol(str, Enum):
     NIFTY = 'NIFTY'
     BANK_NIFTY = 'BANKNIFTY'
 
-# params = {'symbol': Symbol.BANK_NIFTY}
+params = {'symbol': Symbol.BANK_NIFTY}
 
 
-# session = requests.Session()
-# response = session.get(url, headers=headers, params=params)
-# print(response)
-# option_chain = response.json()
-# print(type(option_chain['records']['expiryDates'][0]))
-# print(option_chain['records']['expiryDates'])
+session = requests.Session()
+response = session.get(url, headers=headers, params=params)
+print(response)
+option_chain = response.json()
+# print(json.dumps(option_chain, indent=4))
+print(type(option_chain['records']['expiryDates'][0]))
+print(option_chain['records']['expiryDates'])
+
 
 class NSEAdapter():
     """
@@ -26,7 +31,6 @@ class NSEAdapter():
     
     def __init__(self, symbol: Symbol) -> None:
         self.session = requests.Session()
-        self.set_symbol(symbol)
         
     def set_endpoint(self, endpoint: str) -> str:
         self.endpoint = endpoint
@@ -38,8 +42,10 @@ class NSEAdapter():
         return self.symbol
         
     def _get_headers(self) -> dict:
+        from random import random
+        n = random()
         headers = {
-            'User-Agent': md5(b'123456789').__str__()
+            'User-Agent': md5(n).__str__()
         }
         return headers
     
@@ -49,16 +55,9 @@ class NSEAdapter():
         return params
         
     def get_data(self, endpoint: str = '/option-chain-indices') -> dict:
-        self.set_endpoint(endpoint)
         headers = self._get_headers()
         params = self._get_url_params()
         response = self.session.get(self.set_endpoint(endpoint), headers=headers, params=params)
         return response.json()
     
     
-def main():
-    market = NSEAdapter(Symbol.BANK_NIFTY)
-    print(market.get_data())
-    
-if __name__ == '__main__':
-    main()
