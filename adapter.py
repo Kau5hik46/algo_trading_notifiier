@@ -58,7 +58,11 @@ class NSEAdapter():
     
 def main():
     market = NSEAdapter(Symbol.BANK_NIFTY)
+    # print(type(market.get_data()))
     print(market.get_data())
+    # d = market.get_data()
+    # print(d['records'])
+    # print(d['filtered'])
     
 if __name__ == '__main__':
     main()
