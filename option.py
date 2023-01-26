@@ -10,4 +10,6 @@ class Call(Option):
 class Put(Option):
     def __init__(self) -> None:
         super().__init__()
-        
+
+
+from typing import Optional, List
