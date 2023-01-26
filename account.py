@@ -12,7 +12,7 @@ class Account:
 
     def __init__(self):
         self._balance: float = 0
-        self._securities: Dict[Security.name, List[int, float]] = dict()
+        self._securities: Dict[Security, List[int, float]] = dict()
         self._profit: float = 0
 
     def __load__(self, path: Path) -> None:
@@ -53,7 +53,7 @@ class Account:
                 self._securities[security] = [0, 0]
             try:
                 self._securities[security][1] = (self._securities[security][1] * self._securities[security][0] +
-                                                 security.ltp * units)/(self._securities[security][0] + units)
+                                                 security.ltp * units) / (self._securities[security][0] + units)
                 self._securities[security][0] += units
             except ZeroDivisionError:
                 self._profit += (self._securities[security][1] * self._securities[security][0]
@@ -77,10 +77,8 @@ class Account:
             self.balance -= amount
 
         if security:
-            if security.name not in self.securities:
-                raise AccountException("WITHDRAWAL", "Invalid security withdrawal")
             if security not in self._securities:
-                self._securities[security] = [0, 0]
+                self._securities[security] = [0, 0]  # [units, avg.price]
             try:
                 self._securities[security][1] = (self._securities[security][1] * self._securities[security][0] -
                                                  security.ltp * units) / (self._securities[security][0] - units)
@@ -138,22 +136,10 @@ class TradingAccount(Account):
             try:
                 return (security.ltp - self.securities[security][1]) * self.securities[security][0]
             except Exception as e:
-                raise AccountException("FETCHING_MTM_INDIVIDUAL", "Position is currently close: {}".format(e))
+                raise AccountException("FETCHING_MTM_INDIVIDUAL", "Position is currently closed: {}".format(e))
 
         mtm = 0
         for s in self.securities:
-            mtm +=
+            mtm += (s.ltp - self.securities[s][1]) * self.securities[s][0]
 
-    def place_order(self):
-        """
-
-        :return:
-        """
-        pass
-
-    def orders(self) -> list:
-        """
-
-        :return:
-        """
-        pass
+        return mtm

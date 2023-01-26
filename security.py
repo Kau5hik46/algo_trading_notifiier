@@ -1,4 +1,6 @@
 from adapter import NSEAdapter
+
+
 class Security:
     """
     Virtual class that abstracts all financial instruments: Stocks, Options, etc
