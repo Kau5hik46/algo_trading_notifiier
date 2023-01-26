@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08fc922e-c017-4291-a7d6-81d025f79738" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/opening_balance.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/exceptions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/option.py" beforeDir="false" afterPath="$PROJECT_DIR$/option.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/strangle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +56,7 @@
       <updated>1663437674434</updated>
       <workItem from="1663437675649" duration="1230000" />
       <workItem from="1674711969598" duration="6000" />
-      <workItem from="1674711988113" duration="1707000" />
+      <workItem from="1674711988113" duration="17000000" />
     </task>
     <servers />
   </component>
