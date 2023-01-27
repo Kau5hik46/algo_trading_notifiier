@@ -1,3 +1,6 @@
+from account import TradingAccount
+
+
 class Strangle():
     """
     Class to track the market for strangle strategy
@@ -13,8 +16,10 @@ class Strangle():
         :return:
             None
         """
-        #TODO: If csv exists, then continue that strategy - otherwise create new csv and start a new strangle
-        pass
+        trading_account = TradingAccount()
+        try:
+            trading_account.__load__(Path("data.dumo"))
+        except
 
     def end_strategy(self) -> None:
         """

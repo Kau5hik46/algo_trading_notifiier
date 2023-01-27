@@ -11,7 +11,7 @@ class Security:
         self.adapter: NSEAdapter = adapter
 
     def __hash__(self):
-        return "Security@{}".format(self.__repr__())
+        return hash("Security@{}".format(self.__repr__()))
 
     @property
     def ltp(self) -> float:
@@ -28,7 +28,7 @@ class Security:
         # TODO: Validate the new ltp
         self._ltp = new_ltp
 
-    def __update__(self) -> None:
+    def __update__(self, ) -> None:
         """
         Method to update the changes from the API using adapter
         :return:

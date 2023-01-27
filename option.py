@@ -8,6 +8,7 @@ class Option(Security):
     """
     Class to abstract the option security
     """
+
     def __init__(self, adapter: NSEAdapter) -> None:
         super().__init__(adapter)
         self._expiry: date = date.today()
@@ -25,16 +26,5 @@ class Option(Security):
 
     @expiry.setter
     def expiry(self, exp: date):
-        #TODO: Implement a check for valid expiry
+        # TODO: Implement a check for valid expiry
         self._expiry = exp
-
-class Call(Option):
-    def __init__(self) -> None:
-        super().__init__()
-
-class Put(Option):
-    def __init__(self) -> None:
-        super().__init__()
-
-
-from typing import Optional, List

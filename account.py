@@ -1,5 +1,7 @@
+import pickle
 from pathlib import Path
 from typing import Optional, Dict, List
+import pandas as pd
 
 from exceptions import AccountException, BuyError, SellError
 from security import Security
@@ -96,6 +98,23 @@ class TradingAccount(Account):
         super().__init__()
         self._mtm: float = 0
 
+    def __repr__(self):
+        super_repr: str = super().__repr__()
+        repr = "{}" \
+               "mtm: {}" \
+               "profits: {}" \
+               "securities: {}".format(super_repr, self.mtm, self._profit, self.securities)
+        return repr
+
+    def __load__(self, path: Path) -> None:
+        with open(path, 'rb') as input_path:
+            trading_account = pickle.load(input_path)
+            self.__dict__.update(trading_account.__dict__)
+
+    def __dump__(self, path: Path) -> None:
+        with open(path, 'wb') as output:
+            pickle.dump(self, output, pickle.HIGHEST_PROTOCOL)
+
     def buy(self, security: Security, units: int):
         """
         Method to buy the security provided
@@ -143,3 +162,12 @@ class TradingAccount(Account):
             mtm += (s.ltp - self.securities[s][1]) * self.securities[s][0]
 
         return mtm
+
+    @mtm.setter
+    def mtm(self, amt: float):
+        """
+        Setter for MTM
+        :param amt:
+        :return:
+        """
+        self._mtm = amt
