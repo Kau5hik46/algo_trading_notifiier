@@ -28,3 +28,10 @@ class Option(Security):
     def expiry(self, exp: date):
         # TODO: Implement a check for valid expiry
         self._expiry = exp
+
+    def __update__(self) -> None:
+        """
+        Update Data from adapter
+        :return:
+        """
+        self.adapter.update_option(self)

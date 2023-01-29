@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08fc922e-c017-4291-a7d6-81d025f79738" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/position.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strategy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opening_balance.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapter.py" beforeDir="false" afterPath="$PROJECT_DIR$/adapter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/option.py" beforeDir="false" afterPath="$PROJECT_DIR$/option.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security.py" beforeDir="false" afterPath="$PROJECT_DIR$/security.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/strangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/strangle.py" afterDir="false" />

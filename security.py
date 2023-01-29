@@ -8,6 +8,7 @@ class Security:
 
     def __init__(self, adapter: NSEAdapter):
         self._ltp: float = 0
+        self.__lot_size__: int = 0
         self.adapter: NSEAdapter = adapter
 
     def __hash__(self):
@@ -34,5 +35,4 @@ class Security:
         :return:
             None
         """
-        # TODO: Write the logic to change all the fields that are changed
-        pass
+        self.ltp += 10

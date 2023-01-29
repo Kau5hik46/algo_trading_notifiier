@@ -100,10 +100,10 @@ class TradingAccount(Account):
 
     def __repr__(self):
         super_repr: str = super().__repr__()
-        repr = "{}" \
-               "mtm: {}" \
-               "profits: {}" \
-               "securities: {}".format(super_repr, self.mtm, self._profit, self.securities)
+        repr = "{}\n" \
+               "mtm: {}\n" \
+               "profits: {}\n" \
+               "securities: {}\n".format(super_repr, self.mtm, self._profit, self.securities)
         return repr
 
     def __load__(self, path: Path) -> None:

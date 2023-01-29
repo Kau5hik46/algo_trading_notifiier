@@ -23,7 +23,9 @@ def main():
     acc.__load__(Path("data.dump"))
     # print(acc)
     for i in acc.securities:
+        i.__update__()
         print(i.ltp)
+    print(acc)
 
 
 if __name__ == "__main__":
