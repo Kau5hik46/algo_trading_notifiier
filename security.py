@@ -1,15 +1,11 @@
-from adapter import NSEAdapter
-
-
 class Security:
     """
     Virtual class that abstracts all financial instruments: Stocks, Options, etc
     """
 
-    def __init__(self, adapter: NSEAdapter):
+    def __init__(self):
         self._ltp: float = 0
         self.__lot_size__: int = 0
-        self.adapter: NSEAdapter = adapter
 
     def __hash__(self):
         return hash("Security@{}".format(self.__repr__()))
@@ -35,4 +31,4 @@ class Security:
         :return:
             None
         """
-        self.ltp += 10
+        pass

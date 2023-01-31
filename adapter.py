@@ -57,6 +57,11 @@ class NSEAdapter:
         response = self.session.get(self.set_endpoint(endpoint), headers=headers, params=params)
         return response.json()
 
+    def get_option(self, underlying=None, expiry_date=None, option_type=None, strike_price=None, ltp=None) -> dict:
+        """
+
+        :return: dict having the parameters for the option creation
+        """
 
 def main():
     market = NSEAdapter(Symbol.BANK_NIFTY)

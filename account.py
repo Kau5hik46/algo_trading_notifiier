@@ -1,9 +1,9 @@
 import pickle
 from pathlib import Path
 from typing import Optional, Dict, List
-import pandas as pd
 
 from exceptions import AccountException, BuyError, SellError
+from position import Position, PositionSides
 from security import Security
 
 
@@ -89,6 +89,16 @@ class Account:
                 self._profit += (self._securities[security][1] * self._securities[security][0] - security.ltp * units)
 
 
+    def get_existing_units(self, security: Security) -> int:
+        """
+        Utility method to get the existing units of the security
+        :param security:
+        :return: int quantity of the security
+        """
+        units: int = self.securities[security][0]
+        return units
+
+
 class TradingAccount(Account):
     """
     Class that inherits from an account but works as a trading account
@@ -171,3 +181,16 @@ class TradingAccount(Account):
         :return:
         """
         self._mtm = amt
+
+    def order_from_position(self, position: Position) -> None:
+        """
+        Method to place an order from Position
+        :param position:
+        :return:
+        """
+        if position.side == PositionSides.BUY:
+            self.buy(position.security, position.quantity)
+        elif position.side == PositionSides.SELL:
+            self.sell(position.security, position.quantity)
+        elif position.side == PositionSides.SQUARE_OFF:
+            self.
