@@ -1,8 +1,3 @@
-class Exception_(Exception):
-    def __str__(self) -> str:
-        return super().__str__()
-
-
 class AccountException(Exception):
     error_msg = "The operation {} failed: {}"
 
@@ -18,9 +13,18 @@ class BuyError(Exception):
         super().__init__()
         self.error_msg = BuyError.error_msg.format(instrument, reason)
 
+
 class SellError(Exception):
     error_msg = "Selling {} failed: {}"
 
     def __init__(self, instrument: str, reason: str) -> None:
         super().__init__()
-        self.error_msg = BuyError.error_msg.format(instrument, reason)
+        self.error_msg = SellError.error_msg.format(instrument, reason)
+
+
+class OrderError(Exception):
+    error_msg = "Order execution failed: {} failed: {}"
+
+    def __init__(self, instrument: str, reason: str) -> None:
+        super().__init__()
+        self.error_msg = OrderError.error_msg.format(instrument, reason)

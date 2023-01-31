@@ -13,10 +13,10 @@ class Strategy:
     """
     NAME: str = "strategy_name"
 
-    def __init__(self):
+    def __init__(self, account: TradingAccount):
         self.adapter: NSEAdapter
         self.BEGIN_DATE: date = date.today()
-        self.account: TradingAccount
+        self.account: TradingAccount = TradingAccount()
         self.open_positions: List[Position] = list()
         self.save_path: Path
 

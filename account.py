@@ -2,7 +2,7 @@ import pickle
 from pathlib import Path
 from typing import Optional, Dict, List
 
-from exceptions import AccountException, BuyError, SellError
+from exceptions import AccountException, BuyError, SellError, OrderError
 from position import Position, PositionSides
 from security import Security
 
@@ -15,7 +15,7 @@ class Account:
     def __init__(self):
         self._balance: float = 0
         self._securities: Dict[Security, List[int, float]] = dict()
-        self._profit: float = 0
+        self.profit: float = 0
 
     def __load__(self, path: Path) -> None:
         pass
@@ -58,7 +58,7 @@ class Account:
                                                  security.ltp * units) / (self._securities[security][0] + units)
                 self._securities[security][0] += units
             except ZeroDivisionError:
-                self._profit += (self._securities[security][1] * self._securities[security][0]
+                self.profit += (self._securities[security][1] * self._securities[security][0]
                                  + security.ltp * units)
 
     def withdraw(self, amount: float = None, security: Security = None, units: int = 0):
@@ -86,8 +86,7 @@ class Account:
                                                  security.ltp * units) / (self._securities[security][0] - units)
                 self._securities[security][0] -= units
             except ZeroDivisionError as e:
-                self._profit += (self._securities[security][1] * self._securities[security][0] - security.ltp * units)
-
+                self.profit += (self._securities[security][1] * self._securities[security][0] - security.ltp * units)
 
     def get_existing_units(self, security: Security) -> int:
         """
@@ -113,7 +112,7 @@ class TradingAccount(Account):
         repr = "{}\n" \
                "mtm: {}\n" \
                "profits: {}\n" \
-               "securities: {}\n".format(super_repr, self.mtm, self._profit, self.securities)
+               "securities: {}\n".format(super_repr, self.mtm, self.profit, self.securities)
         return repr
 
     def __load__(self, path: Path) -> None:
@@ -193,4 +192,6 @@ class TradingAccount(Account):
         elif position.side == PositionSides.SELL:
             self.sell(position.security, position.quantity)
         elif position.side == PositionSides.SQUARE_OFF:
-            self.
+            self.sell(position.security, self.get_existing_units(position.security))
+        else:
+            raise OrderError(position.__str__(), "INVALID SIDE (NEITHER BUY, SELL, SQUARE_OFF) FOR THE POSITION")
