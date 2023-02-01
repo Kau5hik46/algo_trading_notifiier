@@ -2,11 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08fc922e-c017-4291-a7d6-81d025f79738" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/accounting/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapter/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/entity/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/entity/position_properties.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/entity/underlying_symbols.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exceptions/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instruments/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/position.py" beforeDir="false" afterPath="$PROJECT_DIR$/position.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/strangle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounting/account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapter.py" beforeDir="false" afterPath="$PROJECT_DIR$/adapter/adapter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cookies.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cookies.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.dump" beforeDir="false" afterPath="$PROJECT_DIR$/data/data.dump" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/exceptions/account_exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/option.py" beforeDir="false" afterPath="$PROJECT_DIR$/instruments/option.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/position.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounting/position.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security.py" beforeDir="false" afterPath="$PROJECT_DIR$/instruments/security.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock_market.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/strangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/strangle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/strategy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/numpy/core/arrayprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/numpy/core/arrayprint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/numpy/core/tests/test_numeric.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/numpy/core/tests/test_numeric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pandas/_testing/_hypothesis.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pandas/_testing/_hypothesis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/commands/install.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/commands/install.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/provider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/utils/glibc.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/utils/glibc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/packaging/_manylinux.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/packaging/_manylinux.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pyparsing/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pyparsing/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/rich/progress.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/rich/progress.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/after.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/after.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/before.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/before.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/before_sleep.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/before_sleep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/nap.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/nap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/retry.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/retry.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/wait.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/wait.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/urllib3/contrib/_securetransport/low_level.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/urllib3/contrib/_securetransport/low_level.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/urllib3/fields.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/urllib3/fields.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pkg_resources/_vendor/packaging/_manylinux.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pkg_resources/_vendor/packaging/_manylinux.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pkg_resources/_vendor/pyparsing/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pkg_resources/_vendor/pyparsing/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_vendor/packaging/_manylinux.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_vendor/packaging/_manylinux.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_vendor/pyparsing/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_vendor/pyparsing/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/urllib3/contrib/_securetransport/low_level.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/urllib3/contrib/_securetransport/low_level.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/urllib3/fields.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/urllib3/fields.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +81,19 @@
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$/exceptions" />
+      <recent name="$PROJECT_DIR$/instruments" />
+      <recent name="$PROJECT_DIR$/accounting" />
+      <recent name="$PROJECT_DIR$/strategy" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -57,7 +107,7 @@
       <workItem from="1674711988113" duration="18955000" />
       <workItem from="1675153635690" duration="31000" />
       <workItem from="1675190573372" duration="114000" />
-      <workItem from="1675191800204" duration="11674000" />
+      <workItem from="1675191800204" duration="16823000" />
     </task>
     <servers />
   </component>

@@ -2,7 +2,7 @@ from datetime import date, datetime
 
 from adapter import Symbol
 from constants import DATE_FORMAT
-from security import Security
+from instruments.security import Security
 
 
 class Option(Security):

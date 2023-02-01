@@ -2,14 +2,14 @@ from datetime import date
 from pathlib import Path
 from typing import List
 
-from account import TradingAccount
+from accounting.account import TradingAccount
 from adapter import NSEAdapter
-from position import Position
+from accounting.position import Position
 
 
 class Strategy:
     """
-    Virtual class for implementing a strategy
+    Virtual class for implementing a manager
     """
     NAME: str = "strategy_name"
 
@@ -25,14 +25,14 @@ class Strategy:
 
     def update(self):
         """
-        Method to update the strategy based on the updates from the market
+        Method to update the manager based on the updates from the market
         :return:
         """
         pass
 
     def entry(self):
         """
-        Method to run only if the strategy is new!
+        Method to run only if the manager is new!
         :return:
         """
         pass
@@ -46,7 +46,7 @@ class Strategy:
 
     def begin_strategy(self, path: Path) -> None:
         """
-        Starts the strategy when called.
+        Starts the manager when called.
 
         :return:
             None
@@ -65,7 +65,7 @@ class Strategy:
 
     def end_strategy(self) -> None:
         """
-        Graciously closes the strategy based on the trigger
+        Graciously closes the manager based on the trigger
         :return:
         """
         pass

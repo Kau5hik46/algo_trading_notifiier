@@ -3,8 +3,8 @@ from pathlib import Path
 from typing import Optional, Dict, List
 
 from exceptions import AccountException, BuyError, SellError, OrderError
-from position import Position, PositionSides
-from security import Security
+from position import Position
+from instruments.security import Security
 
 
 class Account:
@@ -59,7 +59,7 @@ class Account:
                 self._securities[security][0] += units
             except ZeroDivisionError:
                 self.profit += (self._securities[security][1] * self._securities[security][0]
-                                 + security.ltp * units)
+                                + security.ltp * units)
 
     def withdraw(self, amount: float = None, security: Security = None, units: int = 0):
         """
@@ -155,7 +155,7 @@ class TradingAccount(Account):
     @property
     def mtm(self, security: Optional[Security] = None):
         """
-        Method to calculate the overall MTM for the account from strategy start
+        Method to calculate the overall MTM for the account from manager start
         :param security:
         :return:
         """

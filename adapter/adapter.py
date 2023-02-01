@@ -1,23 +1,9 @@
-from enum import Enum
 from hashlib import md5
 
 import requests
 
+from entity.underlying_symbols import Symbol
 
-class Symbol(str, Enum):
-    NIFTY = 'NIFTY'
-    BANK_NIFTY = 'BANKNIFTY'
-
-
-# params = {'symbol': Symbol.BANK_NIFTY}
-
-
-# session = requests.Session()
-# response = session.get(url, headers=headers, params=params)
-# print(response)
-# option_chain = response.json()
-# print(type(option_chain['records']['expiryDates'][0]))
-# print(option_chain['records']['expiryDates'])
 
 class NSEAdapter:
     """
@@ -62,6 +48,8 @@ class NSEAdapter:
 
         :return: dict having the parameters for the option creation
         """
+        pass
+
 
 def main():
     market = NSEAdapter(Symbol.BANK_NIFTY)

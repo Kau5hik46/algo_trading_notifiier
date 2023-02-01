@@ -1,17 +1,18 @@
 from datetime import date, datetime, timedelta
 from typing import List, Optional
 
-from account import TradingAccount
-from adapter import Symbol, NSEAdapter
+from accounting.account import TradingAccount
+from accounting.position import Position
+from adapter.adapter import Symbol, NSEAdapter
 from constants import DATE_FORMAT
-from option import Option
-from position import Position, PositionSide, PositionDirection
-from strategy import Strategy
+from entity.position_properties import PositionDirection, PositionSide
+from instruments.option import Option
+from manager.strategy import Strategy
 
 
 class Strangle(Strategy):
     """
-    Class to track the market for strangle strategy
+    Class to track the market for strangle manager
 
     Strategy:
         Short the 1 OTM strike on each price for the given price
@@ -40,7 +41,7 @@ class Strangle(Strategy):
 
     def __set_config__(self) -> None:
         """
-        Method to set the basic configurations for the strategy
+        Method to set the basic configurations for the manager
         :return: None
         """
         self.SYMBOL = Symbol.BANK_NIFTY
@@ -57,7 +58,7 @@ class Strangle(Strategy):
 
     def entry(self):
         """
-        Method to enter the strategy for the first time
+        Method to enter the manager for the first time
         :return:
         """
         # Trigger on thursday at or after 1:15 PM
@@ -122,7 +123,7 @@ class Strangle(Strategy):
 
     def exit(self):
         """
-        Method to square off all the open positions and wait for the entry of next strategy
+        Method to square off all the open positions and wait for the entry of next manager
         :return:
         """
         for position in self.open_positions:
@@ -132,7 +133,7 @@ class Strangle(Strategy):
 
     def strategy(self):
         """
-        Actual strategy implementation with the golden rules
+        Actual manager implementation with the golden rules
         :return:
         """
         # Check for Exit
@@ -153,7 +154,7 @@ class Strangle(Strategy):
 
     def end_strategy(self) -> None:
         """
-        Graciously closes the strategy based on the trigger
+        Graciously closes the manager based on the trigger
         :return:
         """
         pass
