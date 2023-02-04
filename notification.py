@@ -1,5 +1,5 @@
 __author__ = "Lavanya Naresh"
-__modified__ = "16-Dec-2022"
+__modified__ = "04-Feb-2023"
 
 import os
 import logging
@@ -9,6 +9,7 @@ from telegram.error import TelegramError
 from dotenv import load_dotenv
 
 from strategy import *
+from utility.parameter_dataclasses import *
 
 """
 objective:
@@ -38,7 +39,7 @@ def send_telegram_notification(message, chat_id):
         logging.error("Failed to send notification to Telegram: {}".format(e))
 
 
-def notification(data: dict) -> int:
+def notification(data: data_basemodel) -> int:
     """
     Function
     Helper function that takes input data and makes decision to send notification
