@@ -7,7 +7,7 @@ from pydantic import BaseModel
 from typing import Optional
 
 """
-Update position class as required
+Update Position and Security classes as required
 """
 
 
@@ -23,3 +23,8 @@ class data_basemodel(BaseModel):
     mtm: float
     todo_actions: str
     addi_notes: Optional[list[str]] | Optional[str]
+
+
+class Security(BaseModel):
+    name: str
+    value: float

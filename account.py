@@ -1,19 +1,21 @@
 from exceptions import *
+from utility.parameter_dataclasses import *
 
 
-class Account():
+class Account:
     """
     Class that abstracts an account
     """
 
     def __init__(self):
         pass
-    
+
     def deposit(self, security):
         pass
-    
+
     def withdraw(self):
         pass
+
 
 class TradingAccount(Account):
     """
@@ -22,7 +24,7 @@ class TradingAccount(Account):
 
     def __init__(self):
         pass
-    
+
     def deposit(self, security):
         pass
 
@@ -33,4 +35,3 @@ class TradingAccount(Account):
             self.deposit()
         except BuyError as e:
             raise AccountException("Insufficient Balance")
-        
