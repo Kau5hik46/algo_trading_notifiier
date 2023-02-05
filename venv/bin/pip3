@@ -1,4 +1,4 @@
-#!/Users/kaushkom/Desktop/CS/algo_trading/venv/bin/python3.10
+#!/Users/kaushkom/Desktop/CS/algo_trading/algo_trading_notifiier/venv/bin/python3.10
 # -*- coding: utf-8 -*-
 import re
 import sys

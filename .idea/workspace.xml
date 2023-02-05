@@ -2,51 +2,210 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08fc922e-c017-4291-a7d6-81d025f79738" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/accounting/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adapter/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/entity/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/entity/position_properties.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/entity/underlying_symbols.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exceptions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instruments/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manager/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/algo_trading_notifiier.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounting/account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapter.py" beforeDir="false" afterPath="$PROJECT_DIR$/adapter/adapter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cookies.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/cookies.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.dump" beforeDir="false" afterPath="$PROJECT_DIR$/data/data.dump" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/exceptions/account_exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instruments/option.py" beforeDir="false" afterPath="$PROJECT_DIR$/instruments/option.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instruments/security.py" beforeDir="false" afterPath="$PROJECT_DIR$/instruments/security.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/option.py" beforeDir="false" afterPath="$PROJECT_DIR$/instruments/option.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/position.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounting/position.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security.py" beforeDir="false" afterPath="$PROJECT_DIR$/instruments/security.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_market.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/strangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/strangle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/strategy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/numpy/core/arrayprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/numpy/core/arrayprint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/numpy/core/tests/test_numeric.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/numpy/core/tests/test_numeric.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pandas/_testing/_hypothesis.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pandas/_testing/_hypothesis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager/strangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/strangle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/activate" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/activate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/activate.csh" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/activate.csh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/activate.fish" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/activate.fish" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/pip" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/pip3" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pip3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/pip3.10" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pip3.10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip-22.2.2.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip-22.2.2.dist-info/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip-22.2.2.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip-22.2.2.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip-22.2.2.dist-info/REQUESTED" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip-22.2.2.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip-22.2.2.dist-info/entry_points.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip-22.2.2.dist-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/__pip-runner__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/__pip-runner__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/build_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/build_env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/cache.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/cache.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/cli/base_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/cli/base_command.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/cli/cmdoptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/cli/cmdoptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/cli/main_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/cli/main_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/cli/spinners.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/cli/spinners.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/commands/configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/commands/configuration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/commands/download.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/commands/download.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/commands/install.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/commands/install.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/commands/list.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/commands/list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/commands/wheel.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/commands/wheel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/index/collector.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/index/collector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/locations/_distutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/locations/_distutils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/metadata/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/metadata/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/metadata/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/metadata/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/metadata/importlib/_compat.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/metadata/importlib/_compat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/metadata/importlib/_dists.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/metadata/importlib/_dists.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/metadata/importlib/_envs.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/metadata/importlib/_envs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/metadata/pkg_resources.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/metadata/pkg_resources.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/models/link.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/models/link.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/models/search_scope.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/models/search_scope.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/models/wheel.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/models/wheel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/network/lazy_wheel.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/network/lazy_wheel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/operations/install/wheel.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/operations/install/wheel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/operations/prepare.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/operations/prepare.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/req/req_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/req/req_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/req/req_install.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/req/req_install.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/provider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/utils/deprecation.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/utils/deprecation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/utils/entrypoints.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/utils/entrypoints.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/utils/glibc.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/utils/glibc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/utils/hashes.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/utils/hashes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/utils/setuptools_build.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/utils/setuptools_build.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/vcs/bazaar.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/vcs/bazaar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/vcs/subversion.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/vcs/subversion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/wheel_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_internal/wheel_builder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/certifi/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/certifi/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/certifi/cacert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/certifi/cacert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/certifi/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/certifi/core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/distlib/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/distlib/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/distlib/t32.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/distlib/t32.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/distlib/t64-arm.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/distlib/t64-arm.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/distlib/t64.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/distlib/t64.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/distlib/w32.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/distlib/w32.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/distlib/w64-arm.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/distlib/w64-arm.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/distlib/w64.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/distlib/w64.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/idna/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/idna/core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/idna/idnadata.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/idna/idnadata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/idna/package_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/idna/package_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/idna/uts46data.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/idna/uts46data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/packaging/_manylinux.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/packaging/_manylinux.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/build.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/build.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/check.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/check.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/colorlog.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/colorlog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/compat.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/dirtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/dirtools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/envbuild.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/envbuild.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/in_process/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/in_process/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/in_process/_in_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/in_process/_in_process.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/meta.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/meta.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/wrappers.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pep517/wrappers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/cmdline.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/cmdline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/filters/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/filters/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/formatters/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/formatters/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/formatters/_mapping.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/formatters/_mapping.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/formatters/img.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/formatters/img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/lexers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/lexers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/lexers/_mapping.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/lexers/_mapping.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/lexers/python.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/lexers/python.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/plugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/plugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/styles/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/styles/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/token.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pygments/token.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pyparsing/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/pyparsing/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/requests/certs.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/requests/certs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/rich/progress.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/rich/progress.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/after.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/after.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/before.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/before.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/before_sleep.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/before_sleep.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/nap.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/nap.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/retry.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/retry.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/wait.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/tenacity/wait.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/typing_extensions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/typing_extensions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/urllib3/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/urllib3/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/urllib3/_version.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/urllib3/_version.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/urllib3/contrib/_securetransport/low_level.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/urllib3/contrib/_securetransport/low_level.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/urllib3/contrib/pyopenssl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/urllib3/contrib/pyopenssl.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/urllib3/fields.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/urllib3/fields.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/urllib3/response.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/urllib3/response.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/vendor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pip/_vendor/vendor.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pkg_resources/_vendor/packaging/_manylinux.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pkg_resources/_vendor/packaging/_manylinux.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pkg_resources/_vendor/pyparsing/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/pkg_resources/_vendor/pyparsing/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools-63.4.3.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools-63.4.3.dist-info/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools-63.4.3.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools-63.4.3.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools-63.4.3.dist-info/REQUESTED" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools-63.4.3.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools-63.4.3.dist-info/entry_points.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools-63.4.3.dist-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/_collections.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/_collections.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/_msvccompiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/_msvccompiler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/archive_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/archive_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/bcppcompiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/bcppcompiler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/ccompiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/ccompiler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/cmd.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/cmd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/bdist.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/bdist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/bdist_dumb.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/bdist_dumb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/bdist_msi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/bdist_rpm.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/bdist_rpm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/bdist_wininst.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/build.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/build.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/build_clib.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/build_clib.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/build_ext.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/build_ext.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/build_py.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/build_py.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/build_scripts.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/build_scripts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/check.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/check.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/clean.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/clean.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/install.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/install.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/install_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/install_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/install_egg_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/install_egg_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/install_headers.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/install_headers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/install_lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/install_lib.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/install_scripts.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/install_scripts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/register.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/register.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/sdist.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/sdist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/command/upload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/cygwinccompiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/cygwinccompiler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/dep_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/dep_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/dir_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/dir_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/dist.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/dist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/fancy_getopt.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/fancy_getopt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/file_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/file_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/filelist.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/filelist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/msvc9compiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/msvc9compiler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/msvccompiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/msvccompiler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/spawn.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/spawn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/sysconfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/sysconfig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/unixccompiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/unixccompiler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/versionpredicate.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_distutils/versionpredicate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_entry_points.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_entry_points.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_path.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_path.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_vendor/packaging/_manylinux.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_vendor/packaging/_manylinux.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_vendor/pyparsing/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/_vendor/pyparsing/exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/urllib3/contrib/_securetransport/low_level.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/urllib3/contrib/_securetransport/low_level.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/urllib3/fields.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/urllib3/fields.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/build_meta.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/build_meta.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/build.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/build.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/build_clib.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/build_clib.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/build_ext.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/build_ext.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/build_py.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/build_py.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/dist_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/dist_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/egg_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/egg_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/sdist.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/sdist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/upload_docs.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/command/upload_docs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/config/_validate_pyproject/extra_validations.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/config/_validate_pyproject/extra_validations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/config/_validate_pyproject/fastjsonschema_validations.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/config/_validate_pyproject/fastjsonschema_validations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/config/_validate_pyproject/formats.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/config/_validate_pyproject/formats.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/config/expand.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/config/expand.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/config/pyprojecttoml.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/config/pyprojecttoml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/discovery.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/discovery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/dist.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/dist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/extension.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/logging.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/logging.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/monkey.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/monkey.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/msvc.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/msvc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/package_index.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/package_index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/wheel.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.10/site-packages/setuptools/wheel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/pyvenv.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pyvenv.cfg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,19 +231,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/data" />
@@ -108,6 +268,7 @@
       <workItem from="1675153635690" duration="31000" />
       <workItem from="1675190573372" duration="114000" />
       <workItem from="1675191800204" duration="16823000" />
+      <workItem from="1675600412670" duration="2595000" />
     </task>
     <servers />
   </component>

@@ -1,3 +1,4 @@
+import math
 from datetime import date, datetime, timedelta
 from typing import List, Optional
 
@@ -53,6 +54,8 @@ class Strangle(Strategy):
         self.ENTRY_DATE_TIME: datetime = datetime.now().replace(hour=13, minute=25, second=0) + \
                                          timedelta(days=(3 - datetime.now().weekday()) % 7)
         self.EXPIRY_DATE: date = (self.ENTRY_DATE_TIME + timedelta(days=7)).date()
+        self.STRADDLE_STOP_LOSS_RATIO: float = 1.3
+        self.CURRENT_STOP_LOSS = math.inf
         self.EXIT_PROFIT: float = 4000
         self.adapter = NSEAdapter(self.SYMBOL)
 
@@ -91,13 +94,38 @@ class Strangle(Strategy):
         self.account.order_from_position(self.call)
         self.account.order_from_position(self.put)
 
+    def _secondary_adjust(self, square_off_leg: Position, reference_leg: Position) -> None:
+        """
+        Method to run the straddle adjustment when leg A and leg B have same strike-prices
+        sets the self.STOP_LOSS and when the stop loss is breached, calls the self.exit()
+        Parameters
+        ----------
+        square_off_leg
+        reference_leg
+
+        :return: None
+        -------
+        """
+        self.CURRENT_LTP_SUM = square_off_leg.security.ltp + reference_leg.security.ltp
+
+        if self.CURRENT_STOP_LOSS is math.inf:
+            self.CURRENT_STOP_LOSS = self.CURRENT_LTP_SUM * self.STRADDLE_STOP_LOSS_RATIO
+
+        if self.CURRENT_LTP_SUM >= self.CURRENT_STOP_LOSS:
+            self.exit()
+
     def adjust(self, square_off_leg: Position, reference_leg: Position) -> Position:
         """
-        Method to
+        Method to adjust the strategy based on the market conditions
+
         :param reference_leg:
         :param square_off_leg:
         :return:
         """
+
+        if square_off_leg.security.strike_price == reference_leg.security.strike_price:
+            self._secondary_adjust(square_off_leg, reference_leg)
+            return square_off_leg
         # Square off the existing position and take a new position
         square_off_leg.side = PositionSide.SQUARE_OFF
         # Placing the order from Position

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/algo_trading.iml" filepath="$PROJECT_DIR$/.idea/algo_trading.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/algo_trading_notifiier.iml" filepath="$PROJECT_DIR$/.idea/algo_trading_notifiier.iml" />
     </modules>
   </component>
 </project>

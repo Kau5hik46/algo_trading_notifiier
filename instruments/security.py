@@ -1,3 +1,6 @@
+from adapter.adapter import NSEAdapter
+
+
 class Security:
     """
     Virtual class that abstracts all financial instruments: Stocks, Options, etc
@@ -25,7 +28,7 @@ class Security:
         # TODO: Validate the new ltp
         self._ltp = new_ltp
 
-    def __update__(self, ) -> None:
+    def __update__(self, adapter: NSEAdapter) -> None:
         """
         Method to update the changes from the API using adapter
         :return:

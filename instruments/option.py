@@ -1,6 +1,7 @@
 from datetime import date, datetime
 
-from adapter import Symbol
+from entity.underlying_symbols import Symbol
+from adapter.adapter import NSEAdapter
 from constants import DATE_FORMAT
 from instruments.security import Security
 
@@ -20,3 +21,12 @@ class Option(Security):
     def __repr__(self):
         exp = self.expiry_date.strftime("%d-%m-%Y")
         return "{} {} {} {}".format(self.underlying, self.strike_price, self.option_type, exp)
+
+    def __update__(self, adapter: NSEAdapter) -> None:
+        updated_values = adapter.get_option(
+            underlying=self.underlying,
+            strike_price=self.strike_price,
+            expiry_date=self.expiry_date,
+            option_type=self.option_type
+        )
+        self.ltp = updated_values['ltp']
