@@ -2,9 +2,10 @@ import pickle
 from pathlib import Path
 from typing import Optional, Dict, List
 
-from exceptions import AccountException, BuyError, SellError, OrderError
-from position import Position
+from entity.position_properties import PositionSide
+from exceptions.account_exceptions import AccountError, BuyError, SellError, OrderError, LoadError
 from instruments.security import Security
+from accounting.position import Position
 
 
 class Account:
@@ -45,7 +46,7 @@ class Account:
         :return: None
         """
         if amount is None and security is None:
-            raise AccountException("DEPOSIT", "Invalid deposit")
+            raise AccountError("DEPOSIT", "Invalid deposit")
 
         if amount:
             self.balance += amount
@@ -71,11 +72,11 @@ class Account:
         :return: None
         """
         if amount is None and security is None:
-            raise AccountException("WITHDRAWAL", "Invalid withdrawal")
+            raise AccountError("WITHDRAWAL", "Invalid withdrawal")
 
         if amount:
             if amount > self.balance:
-                raise AccountException("WITHDRAWAL", "Insufficient balance to withdraw")
+                raise AccountError("WITHDRAWAL", "Insufficient balance to withdraw")
             self.balance -= amount
 
         if security:
@@ -116,9 +117,12 @@ class TradingAccount(Account):
         return repr
 
     def __load__(self, path: Path) -> None:
-        with open(path, 'rb') as input_path:
-            trading_account = pickle.load(input_path)
-            self.__dict__.update(trading_account.__dict__)
+        try:
+            with open(path, 'rb') as input_path:
+                trading_account = pickle.load(input_path)
+                self.__dict__.update(trading_account.__dict__)
+        except FileNotFoundError as e:
+            raise LoadError("LOAD", e.__str__())
 
     def __dump__(self, path: Path) -> None:
         with open(path, 'wb') as output:
@@ -135,7 +139,7 @@ class TradingAccount(Account):
             cost = security.ltp * units
             self.withdraw(amount=cost)
             self.deposit(security=security, units=units)
-        except AccountException as e:
+        except AccountError as e:
             raise BuyError(security.__repr__(), e)
 
     def sell(self, security: Security, units: int):
@@ -149,7 +153,7 @@ class TradingAccount(Account):
             cost = security.ltp * units
             self.withdraw(security=security, units=units)
             self.deposit(amount=cost)
-        except AccountException as e:
+        except AccountError as e:
             raise SellError(security.__repr__(), e)
 
     @property
@@ -164,7 +168,7 @@ class TradingAccount(Account):
             try:
                 return (security.ltp - self.securities[security][1]) * self.securities[security][0]
             except Exception as e:
-                raise AccountException("FETCHING_MTM_INDIVIDUAL", "Position is currently closed: {}".format(e))
+                raise AccountError("FETCHING_MTM_INDIVIDUAL", "Position is currently closed: {}".format(e))
 
         mtm = 0
         for s in self.securities:
@@ -187,11 +191,11 @@ class TradingAccount(Account):
         :param position:
         :return:
         """
-        if position.side == PositionSides.BUY:
+        if position.side == PositionSide.BUY:
             self.buy(position.security, position.quantity)
-        elif position.side == PositionSides.SELL:
+        elif position.side == PositionSide.SELL:
             self.sell(position.security, position.quantity)
-        elif position.side == PositionSides.SQUARE_OFF:
+        elif position.side == PositionSide.SQUARE_OFF:
             self.sell(position.security, self.get_existing_units(position.security))
         else:
             raise OrderError(position.__str__(), "INVALID SIDE (NEITHER BUY, SELL, SQUARE_OFF) FOR THE POSITION")

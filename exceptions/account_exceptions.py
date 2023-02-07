@@ -1,9 +1,17 @@
-class AccountException(Exception):
+class AccountError(Exception):
     error_msg = "The operation {} failed: {}"
 
     def __init__(self, operation: str, msg: str) -> None:
         super().__init__()
-        self.error_msg = AccountException.error_msg.format(operation, msg)
+        self.error_msg = AccountError.error_msg.format(operation, msg)
+
+
+class LoadError(Exception):
+    error_msg = "Loading {} failed: {}"
+
+    def __init__(self, path: str, reason: str) -> None:
+        super().__init__()
+        self.error_msg = BuyError.error_msg.format(path, reason)
 
 
 class BuyError(Exception):

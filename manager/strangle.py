@@ -24,13 +24,12 @@ class Strangle(Strategy):
     """
     NAME = "strangle"
 
-    def __init__(self, account: TradingAccount) -> None:
-        super().__init__(account)
+    def __init__(self) -> None:
+        super().__init__()
         self.call: Position = Position()
         self.put: Position = Position()
         self.call_hedge: Optional[Position] = Position()
         self.put_hedge: Optional[Position] = Position()
-        self._open_positions: List[Position]
 
     @property
     def open_positions(self) -> List[Position]:
@@ -38,7 +37,8 @@ class Strangle(Strategy):
         Getter for open positions
         :return: List of all open Positions
         """
-        return list([self.call, self.put, self.call_hedge, self.put_hedge])
+        self._open_positions = list([self.call, self.put, self.call_hedge, self.put_hedge])
+        return self._open_positions
 
     def __set_config__(self) -> None:
         """

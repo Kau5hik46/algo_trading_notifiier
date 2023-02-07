@@ -3,8 +3,9 @@ from pathlib import Path
 from typing import List
 
 from accounting.account import TradingAccount
-from adapter import NSEAdapter
 from accounting.position import Position
+from adapter.adapter import NSEAdapter
+from exceptions.account_exceptions import LoadError
 
 
 class Strategy:
@@ -13,11 +14,11 @@ class Strategy:
     """
     NAME: str = "strategy_name"
 
-    def __init__(self, account: TradingAccount):
+    def __init__(self):
         self.adapter: NSEAdapter
         self.BEGIN_DATE: date = date.today()
         self.account: TradingAccount = TradingAccount()
-        self.open_positions: List[Position] = list()
+        self._open_positions: List[Position] = list()
         self.save_path: Path
 
     def __str__(self):
@@ -55,12 +56,27 @@ class Strategy:
         try:
             trading_account.__load__(path)
             return None
-        except:
+        except LoadError as e:
             # TODO: Figure out what exceptions arise here and also implement the same in the trading account class
             self.entry()
 
-
     def strategy(self):
+        pass
+
+    def _load_strategy(self):
+        """
+        Method to load the strategy from a pickle at the start of the day
+        Returns
+        -------
+
+        """
+    def _save_strategy(self):
+        """
+        Method to save the strategy as a pickle at the end of the day
+        Returns
+        -------
+
+        """
         pass
 
     def end_strategy(self) -> None:

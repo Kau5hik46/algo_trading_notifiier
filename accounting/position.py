@@ -1,4 +1,5 @@
 from instruments.security import Security
+from entity.position_properties import PositionSide, PositionDirection
 
 
 class Position:
