@@ -16,4 +16,9 @@ class Position:
         self.direction: PositionDirection = direction
         self.quantity: int = quantity
 
+    def __repr__(self):
+        return "Position: {}\n" \
+               "Side: {}\n" \
+               "Direction: {}\n" \
+               "Quantity: {}".format(self.security, self.side, self.direction, self.quantity)
     # TODO: To be implemented as necessary

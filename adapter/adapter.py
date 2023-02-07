@@ -48,7 +48,16 @@ class NSEAdapter:
 
         :return: dict having the parameters for the option creation
         """
-        pass
+        sym = self.set_symbol(Symbol.BANK_NIFTY)
+        return dict(
+            {
+                "underlying": sym,
+                "expiry_date": "09-Feb-2023",
+                "option_type": "CE",
+                "strike_price": 42000,
+                "ltp": 200
+            }
+        )
 
 
 def main():

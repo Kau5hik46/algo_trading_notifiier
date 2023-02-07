@@ -64,33 +64,32 @@ class Strangle(Strategy):
         Method to enter the manager for the first time
         :return:
         """
-        # Trigger on thursday at or after 1:15 PM
-        if self.ENTRY_DATE_TIME <= datetime.now() < self.ENTRY_DATE_TIME + timedelta(minutes=5):
-            call_option_params = self.adapter.get_option(underlying=self.SYMBOL,
-                                                         expiry_date=self.EXPIRY_DATE.strftime(DATE_FORMAT),
-                                                         option_type="CE", ltp=self.START_PRICE)
-            put_option_params = self.adapter.get_option(underlying=self.SYMBOL,
-                                                        expiry_date=self.EXPIRY_DATE.strftime(DATE_FORMAT),
-                                                        option_type="PE", ltp=self.START_PRICE)
-            call_option_hedge_params = self.adapter.get_option(underlying=self.SYMBOL,
-                                                               expiry_date=self.EXPIRY_DATE.strftime(DATE_FORMAT),
-                                                               option_type="CE", ltp=self.HEDGE_START_PRICE)
-            put_option__hedge_params = self.adapter.get_option(underlying=self.SYMBOL,
-                                                               expiry_date=self.EXPIRY_DATE.strftime(DATE_FORMAT),
-                                                               option_type="PE", ltp=self.HEDGE_START_PRICE)
+        # TODO: Trigger on thursday at or after 1:15 PM
+        call_option_params = self.adapter.get_option(underlying=self.SYMBOL,
+                                                     expiry_date=self.EXPIRY_DATE.strftime(DATE_FORMAT),
+                                                     option_type="CE", ltp=self.START_PRICE)
+        put_option_params = self.adapter.get_option(underlying=self.SYMBOL,
+                                                    expiry_date=self.EXPIRY_DATE.strftime(DATE_FORMAT),
+                                                    option_type="PE", ltp=self.START_PRICE)
+        call_option_hedge_params = self.adapter.get_option(underlying=self.SYMBOL,
+                                                           expiry_date=self.EXPIRY_DATE.strftime(DATE_FORMAT),
+                                                           option_type="CE", ltp=self.HEDGE_START_PRICE)
+        put_option__hedge_params = self.adapter.get_option(underlying=self.SYMBOL,
+                                                           expiry_date=self.EXPIRY_DATE.strftime(DATE_FORMAT),
+                                                           option_type="PE", ltp=self.HEDGE_START_PRICE)
 
-            call_option = Option(call_option_params)
-            call_hedge = Option(call_option_hedge_params)
-            put_option = Option(put_option_params)
-            put_hedge = Option(put_option__hedge_params)
+        call_option = Option(**call_option_params)
+        call_hedge = Option(**call_option_hedge_params)
+        put_option = Option(**put_option_params)
+        put_hedge = Option(**put_option__hedge_params)
 
-            self.call_hedge = Position(call_hedge, PositionSide.BUY, PositionDirection.LONG, self.LOTS * self.LOT_SIZE)
-            self.put_hedge = Position(put_hedge, PositionSide.BUY, PositionDirection.SHORT, self.LOTS * self.LOT_SIZE)
-            self.call = Position(call_option, PositionSide.SELL, PositionDirection.SHORT, self.LOTS * self.LOT_SIZE)
-            self.put = Position(put_option, PositionSide.SELL, PositionDirection.LONG, self.LOTS * self.LOT_SIZE)
+        self.call_hedge = Position(call_hedge, PositionSide.BUY, PositionDirection.LONG, self.LOTS * self.LOT_SIZE)
+        self.put_hedge = Position(put_hedge, PositionSide.BUY, PositionDirection.SHORT, self.LOTS * self.LOT_SIZE)
+        self.call = Position(call_option, PositionSide.SELL, PositionDirection.SHORT, self.LOTS * self.LOT_SIZE)
+        self.put = Position(put_option, PositionSide.SELL, PositionDirection.LONG, self.LOTS * self.LOT_SIZE)
 
-        self.account.order_from_position(self.call_hedge)
-        self.account.order_from_position(self.put_hedge)
+        # self.account.order_from_position(self.call_hedge)
+        # self.account.order_from_position(self.put_hedge)
         self.account.order_from_position(self.call)
         self.account.order_from_position(self.put)
 

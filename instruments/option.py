@@ -10,13 +10,14 @@ class Option(Security):
     """
     Class to abstract the option security
     """
-
-    def __init__(self, underlying: Symbol, expiry_date: str, ) -> None:
+    # TODO: implement check to get the same object every time it is created with the same parameters
+    def __init__(self, underlying:Symbol, expiry_date: str, option_type: str, strike_price: int, ltp) -> None:
         super().__init__()
         self.expiry_date: date = datetime.strptime(expiry_date, DATE_FORMAT).date()
         self.underlying: Symbol = Symbol.BANK_NIFTY
         self.strike_price: int = 42000
         self.option_type: str = "CE"
+        self.ltp = 120
 
     def __repr__(self):
         exp = self.expiry_date.strftime("%d-%m-%Y")

@@ -11,6 +11,11 @@ def main():
     strategy.__set_config__()
     path = Path('data', strategy.__str__())
     strategy.begin_strategy(path)
+    for security in strategy.account.securities:
+        security.__update__(adapter)
+
+    print(strategy.open_positions, strategy.account)
+    strategy._save_strategy(path)
 
 
 if __name__ == "__main__":

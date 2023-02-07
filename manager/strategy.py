@@ -1,3 +1,4 @@
+import pickle
 from datetime import date
 from pathlib import Path
 from typing import List
@@ -52,32 +53,41 @@ class Strategy:
         :return:
             None
         """
-        trading_account = TradingAccount()
         try:
-            trading_account.__load__(path)
+            self._load_strategy(path)
+            print(self.account)
             return None
         except LoadError as e:
             # TODO: Figure out what exceptions arise here and also implement the same in the trading account class
             self.entry()
+            print(self.account)
 
     def strategy(self):
         pass
 
-    def _load_strategy(self):
+    def _load_strategy(self, path: Path):
         """
         Method to load the strategy from a pickle at the start of the day
         Returns
         -------
 
         """
-    def _save_strategy(self):
+        try:
+            with open(path, 'rb') as input_path:
+                strategy = pickle.load(input_path)
+                self.__dict__.update(strategy.__dict__)
+        except FileNotFoundError as e:
+            raise LoadError("LOAD", e.__str__())
+
+    def _save_strategy(self, path: Path):
         """
         Method to save the strategy as a pickle at the end of the day
         Returns
         -------
 
         """
-        pass
+        with open(path, 'wb') as output:
+            pickle.dump(self, output, pickle.HIGHEST_PROTOCOL)
 
     def end_strategy(self) -> None:
         """
