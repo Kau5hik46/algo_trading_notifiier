@@ -59,6 +59,7 @@ class Account:
                                                  security.ltp * units) / (self._securities[security][0] + units)
                 self._securities[security][0] += units
             except ZeroDivisionError:
+                print("PROFIT BOOKED: ", self._securities[security][1], self._securities[security][0])
                 self.profit += (self._securities[security][1] * self._securities[security][0]
                                 + security.ltp * units)
 
@@ -87,7 +88,8 @@ class Account:
                                                  security.ltp * units) / (self._securities[security][0] - units)
                 self._securities[security][0] -= units
             except ZeroDivisionError as e:
-                self.profit += (self._securities[security][1] * self._securities[security][0] - security.ltp * units)
+                print("PROFIT BOOKED: ", self._securities[security][1], self._securities[security][0], security.ltp, units)
+                self.profit -= (self._securities[security][1] * self._securities[security][0] - security.ltp * units)
 
     def get_existing_units(self, security: Security) -> int:
         """
@@ -172,6 +174,7 @@ class TradingAccount(Account):
 
         mtm = 0
         for s in self.securities:
+            print("{}: {} {} {}".format(mtm, s.ltp, self.securities[s][1], self.securities[s][0]))
             mtm += (s.ltp - self.securities[s][1]) * self.securities[s][0]
 
         return mtm

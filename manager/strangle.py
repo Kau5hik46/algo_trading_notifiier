@@ -46,18 +46,20 @@ class Strangle(Strategy):
         :return: None
         """
         self.SYMBOL = Symbol.BANK_NIFTY
+        self.adapter = NSEAdapter(self.SYMBOL)
         self.LOT_SIZE: int = 25
         self.LOTS: int = 1
         self.START_PRICE: float = 120.0
         self.HEDGE_START_PRICE: float = 20.0
         self.RATIO: float = 2.0
-        self.ENTRY_DATE_TIME: datetime = datetime.now().replace(hour=13, minute=25, second=0) + \
-                                         timedelta(days=(3 - datetime.now().weekday()) % 7)
-        self.EXPIRY_DATE: date = (self.ENTRY_DATE_TIME + timedelta(days=7)).date()
+        # TODO: Set the expiry date time object to have the expiry time correct
+        self.EXPIRY_DATE: date = datetime.strptime(self.adapter.get_expiries()[0], DATE_FORMAT) \
+            if datetime.now().weekday() is not 3 else datetime.strptime(self.adapter.get_expiries()[1], DATE_FORMAT)
+        print(self.EXPIRY_DATE)
         self.STRADDLE_STOP_LOSS_RATIO: float = 1.3
         self.CURRENT_STOP_LOSS = math.inf
         self.EXIT_PROFIT: float = 4000
-        self.adapter = NSEAdapter(self.SYMBOL)
+
 
     def entry(self):
         """
@@ -65,18 +67,11 @@ class Strangle(Strategy):
         :return:
         """
         # TODO: Trigger on thursday at or after 1:15 PM
-        call_option_params = self.adapter.get_option(underlying=self.SYMBOL,
-                                                     expiry_date=self.EXPIRY_DATE.strftime(DATE_FORMAT),
-                                                     option_type="CE", ltp=self.START_PRICE)
-        put_option_params = self.adapter.get_option(underlying=self.SYMBOL,
-                                                    expiry_date=self.EXPIRY_DATE.strftime(DATE_FORMAT),
-                                                    option_type="PE", ltp=self.START_PRICE)
-        call_option_hedge_params = self.adapter.get_option(underlying=self.SYMBOL,
-                                                           expiry_date=self.EXPIRY_DATE.strftime(DATE_FORMAT),
-                                                           option_type="CE", ltp=self.HEDGE_START_PRICE)
-        put_option__hedge_params = self.adapter.get_option(underlying=self.SYMBOL,
-                                                           expiry_date=self.EXPIRY_DATE.strftime(DATE_FORMAT),
-                                                           option_type="PE", ltp=self.HEDGE_START_PRICE)
+        # if entry_datetime <= datetime.now() < entry_datetime + timedelta(minutes=5):
+        call_option_params = self.adapter.get_option_by_ltp(ltp=self.START_PRICE, option_type="CE")
+        put_option_params = self.adapter.get_option_by_ltp(ltp=self.START_PRICE, option_type="PE")
+        call_option_hedge_params = self.adapter.get_option_by_ltp(ltp=self.HEDGE_START_PRICE, option_type="CE")
+        put_option__hedge_params = self.adapter.get_option_by_ltp(ltp=self.HEDGE_START_PRICE, option_type="PE")
 
         call_option = Option(**call_option_params)
         call_hedge = Option(**call_option_hedge_params)
@@ -121,21 +116,23 @@ class Strangle(Strategy):
         :param square_off_leg:
         :return:
         """
-
+        # This is the secondary adjustment
         if square_off_leg.security.strike_price == reference_leg.security.strike_price:
             self._secondary_adjust(square_off_leg, reference_leg)
             return square_off_leg
+        # Primary Adjustment
         # Square off the existing position and take a new position
         square_off_leg.side = PositionSide.SQUARE_OFF
         # Placing the order from Position
         self.account.order_from_position(square_off_leg)
 
         # Fetching the relevant option from the Adapter
-        adjusted_option = self.adapter.get_option(
-            underlying=self.SYMBOL,
-            expiry_date=self.EXPIRY_DATE.strftime(DATE_FORMAT),
-            option_type=square_off_leg.security.option_type,
-            ltp=reference_leg.security.ltp
+        # TODO: At most make it a Straddle not inverted strangle
+        adjusted_option = Option(
+            **self.adapter.get_option_by_ltp(
+                ltp=reference_leg.security.ltp,
+                option_type=square_off_leg.security.option_type
+            )
         )
         # noinspection PyTypeChecker
         # Creating a new position in the place of existing position
@@ -169,10 +166,12 @@ class Strangle(Strategy):
 
         # Adjustment
         ratio = self.call.security.ltp / self.put.security.ltp
+        print("ratio: {}".format(ratio))
         square_off_leg = self.call if self.call.security.ltp < self.put.security.ltp else self.put
         reference_leg = self.put if self.call.security.ltp < self.put.security.ltp else self.call
         if ratio > self.RATIO or ratio < (1 / self.RATIO):
             # Trigger adjustment
+            print("ADJUSTMENT TRIGGERED: {} {} {}".format(ratio, square_off_leg, reference_leg))
             adjusted_position = self.adjust(square_off_leg, reference_leg)
             if ratio > self.RATIO:
                 self.put = adjusted_position

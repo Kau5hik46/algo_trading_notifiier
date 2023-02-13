@@ -15,6 +15,11 @@ def main():
         security.__update__(adapter)
 
     print(strategy.open_positions, strategy.account)
+
+    strategy.strategy()
+
+    # print(strategy.open_positions, strategy.account)
+    print(strategy.account)
     strategy._save_strategy(path)
 
 

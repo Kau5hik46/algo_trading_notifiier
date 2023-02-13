@@ -16,6 +16,7 @@ class Strategy:
     NAME: str = "strategy_name"
 
     def __init__(self):
+        self.EXPIRY_DATE: date = date.today()
         self.adapter: NSEAdapter
         self.BEGIN_DATE: date = date.today()
         self.account: TradingAccount = TradingAccount()
@@ -23,7 +24,7 @@ class Strategy:
         self.save_path: Path
 
     def __str__(self):
-        return "{}_{}.dump".format(self.NAME, self.BEGIN_DATE)
+        return "{}_{}.dump".format(self.NAME, self.EXPIRY_DATE)
 
     def update(self):
         """

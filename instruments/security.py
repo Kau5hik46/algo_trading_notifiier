@@ -14,10 +14,7 @@ class Security:
         return hash("Security@{}".format(self.__repr__()))
 
     def __eq__(self, other):
-        if isinstance(other, self.__class__):
-            return self.__dict__ == other.__dict__
-        else:
-            return False
+        pass
 
     @property
     def ltp(self) -> float:
@@ -40,4 +37,4 @@ class Security:
         :return:
             None
         """
-        self.ltp = 200
+        pass
