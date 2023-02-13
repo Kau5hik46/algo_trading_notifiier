@@ -3,10 +3,11 @@ from typing import List, Dict
 
 import requests
 
-from entity.underlying_symbols import Symbol
+from algo_trading.design_patterns.publisher import Publisher
+from algo_trading.entity.underlying_symbols import Symbol
 
 
-class NSEAdapter:
+class NSEAdapter(Publisher):
     """
     Class to work with the NSE website to fetch live market data
     """
@@ -14,20 +15,32 @@ class NSEAdapter:
     API_URL = 'https://www.nseindia.com/api'
 
     def __init__(self, symbol: Symbol) -> None:
-        self.session = requests.Session()
+        super().__init__()
+        self._symbol: Symbol = symbol
+        self._endpoint: str = '/option-chain-indices'
+        self._url: str = NSEAdapter.API_URL + self._endpoint
+        self.session: requests.Session = requests.Session()
         self.records: dict = dict()
-        self.set_symbol(symbol)
 
-    def set_endpoint(self, endpoint: str) -> str:
-        self.endpoint = endpoint
-        self.url = NSEAdapter.API_URL + self.endpoint
-        return self.url
+    @property
+    def endpoint(self) -> str:
+        return self._endpoint
 
-    def set_symbol(self, symbol: Symbol) -> Symbol:
-        self.symbol = symbol
-        return self.symbol
+    @endpoint.setter
+    def endpoint(self, endpoint: str):
+        self._endpoint = endpoint
 
-    def _get_headers(self) -> dict:
+    @property
+    def url(self) -> str:
+        self._url = NSEAdapter.API_URL + self.endpoint
+        return self._url
+
+    @property
+    def symbol(self) -> Symbol:
+        return self._symbol
+
+    @staticmethod
+    def _get_headers() -> dict:
         headers = {
             'User-Agent': md5(b'987654321').__str__()
         }
@@ -38,15 +51,14 @@ class NSEAdapter:
         params['symbol'] = self.symbol
         return params
 
-    def get_data(self, endpoint: str = '/option-chain-indices') -> Dict:
-        self.set_endpoint(endpoint)
+    def get_data(self) -> Dict:
         headers = self._get_headers()
         params = self._get_url_params()
-        response = self.session.get(self.set_endpoint(endpoint), headers=headers, params=params)
+        response = self.session.get(self.url, headers=headers, params=params)
         return response.json()
 
-    def get_expiries(self, endpoint: str = '/option-chain-indices') -> List:
-        response = self.get_data(endpoint)
+    def get_expiries(self) -> List:
+        response = self.get_data()
         print(response)
         return response['records']['expiryDates']
 
@@ -56,7 +68,7 @@ class NSEAdapter:
         identifier: string attributed to the option
         :return: dict having the parameters for the option creation
         """
-        sym = self.set_symbol(Symbol.BANK_NIFTY)
+        r = self.records
         if identifier == 'OPTIDXBANKNIFTY16-02-2023CE43000.00':
             return dict(
                 {

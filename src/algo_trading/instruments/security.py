@@ -1,12 +1,15 @@
-from adapter.adapter import NSEAdapter
+from algo_trading.adapter.adapter import NSEAdapter
+
+from algo_trading.design_patterns.observer import Observer
 
 
-class Security:
+class Security(Observer):
     """
     Virtual class that abstracts all financial instruments: Stocks, Options, etc
     """
 
-    def __init__(self):
+    def __init__(self, publisher):
+        super().__init__(publisher)
         self._ltp: float = 0
         self.__lot_size__: int = 0
 
