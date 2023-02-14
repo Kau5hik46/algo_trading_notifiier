@@ -1,6 +1,9 @@
+import json
+import time
 from hashlib import md5
 from typing import List, Dict
 
+import pandas as pd
 import requests
 
 from algo_trading.design_patterns.publisher import Publisher
@@ -52,10 +55,16 @@ class NSEAdapter(Publisher):
         return params
 
     def get_data(self) -> Dict:
+        # Getting the data and storing in the records member
         headers = self._get_headers()
         params = self._get_url_params()
         response = self.session.get(self.url, headers=headers, params=params)
-        return response.json()
+        self.records = response.json()
+
+        # Pushing the changes to the consuming observers
+        self._push()
+
+        return self.records
 
     def get_expiries(self) -> List:
         response = self.get_data()
@@ -68,18 +77,9 @@ class NSEAdapter(Publisher):
         identifier: string attributed to the option
         :return: dict having the parameters for the option creation
         """
-        r = self.records
+        sym = self.symbol
         if identifier == 'OPTIDXBANKNIFTY16-02-2023CE43000.00':
-            return dict(
-                {
-                    "identifier": 'OPTIDXBANKNIFTY16-02-2023CE43000.00',
-                    "underlying": sym,
-                    "expiry_date": '16-Feb-2023',
-                    "option_type": 'CE',
-                    "strike_price": 43000,
-                    "ltp": 190
-                }
-            )
+            return self.records['records']['data']
         if identifier == 'OPTIDXBANKNIFTY16-02-2023PE41000.00':
             return dict(
                 {
@@ -104,7 +104,7 @@ class NSEAdapter(Publisher):
         -------
         Dict: dictionary of parameters required to create the option
         """
-        sym = self.set_symbol(Symbol.BANK_NIFTY)
+        sym = self.symbol
         if option_type == "CE":
             return dict(
                 {
@@ -131,7 +131,11 @@ class NSEAdapter(Publisher):
 
 def main():
     market = NSEAdapter(Symbol.BANK_NIFTY)
-    print(market.get_data())
+
+    for i in range(5):
+        market.get_data()
+        print(market.get_option('OPTIDXBANKNIFTY16-02-2023CE43000.00'))
+        time.sleep(1)
 
 
 if __name__ == '__main__':

@@ -1,5 +1,4 @@
 from algo_trading.adapter.adapter import NSEAdapter
-
 from algo_trading.design_patterns.observer import Observer
 
 
@@ -8,8 +7,9 @@ class Security(Observer):
     Virtual class that abstracts all financial instruments: Stocks, Options, etc
     """
 
-    def __init__(self, publisher):
-        super().__init__(publisher)
+    def __init__(self, adapter: NSEAdapter):
+        super().__init__(adapter)
+        self.subscribe()
         self._ltp: float = 0
         self.__lot_size__: int = 0
 
@@ -34,7 +34,7 @@ class Security(Observer):
         # TODO: Validate the new ltp
         self._ltp = new_ltp
 
-    def __update__(self, adapter: NSEAdapter) -> None:
+    def update(self) -> None:
         """
         Method to update the changes from the API using adapter
         :return:

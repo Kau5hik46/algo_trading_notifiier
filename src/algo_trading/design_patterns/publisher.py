@@ -1,5 +1,4 @@
-import pandas as pd
-from typing import List
+from typing import Set
 
 
 from algo_trading.design_patterns.observer import Observer
@@ -15,7 +14,7 @@ class Publisher:
         """
         Initializer method
         """
-        self.observers: List[Observer] = list()
+        self.observers: Set[Observer] = set()
 
     def subscribe(self, observer: Observer) -> None:
         """
@@ -29,7 +28,7 @@ class Publisher:
         -------
         None
         """
-        self.observers.append(observer)
+        self.observers.add(observer)
 
     def _push(self):
         """
