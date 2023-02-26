@@ -36,7 +36,9 @@ def send_telegram_notification(message, chat_id):
     try:
         bot.send_message(chat_id=chat_id, text=message, parse_mode=ParseMode.MARKDOWN)
     except TelegramError as e:
-        logging.error("Failed to send notification to Telegram: {}".format(e))
+        logging.error(
+            f"Failed to send notification to Telegram: {e}\nMessage:\t{message}"
+        )
 
 
 def notification(data: data_basemodel) -> int:
@@ -46,15 +48,15 @@ def notification(data: data_basemodel) -> int:
 
     Params
     ------
-    data: pydantic.basemodel
+    data: data_basemodel
         input data
         Example:
             {
-                "position": class_order_object_yet_to_be_created,
-                "ltp": float,
-                "mtm": float,
-                "what needs to be done": IDK,
-                "addi_notes": Optional[list[str]] | Optional[str]
+                position: Position
+                ltp: float
+                mtm: float
+                todo_actions: str
+                addi_notes: Optional[list[str]] | Optional[str]
             }
 
     Returns
