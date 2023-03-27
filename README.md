@@ -1,4 +1,4 @@
-# algo_trading_notifiier
+# algo_trading_notifier
 A continuous NSE market option chain tracker and notifier according to the strategy chosen.
   
 ## STRATEGY:
